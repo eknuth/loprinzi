@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <Layout
@@ -378,7 +379,7 @@ import Layout from '../layouts/Layout.astro';
             T Nation called it "The Mecca of Portland." Willamette Week says they're "Stickin' With It."
             The story has been told many times — and it never gets old.
           </p>
-          <a href="/press" style="font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem; color: var(--color-coral); text-decoration: none; border-bottom: 2px solid var(--color-coral); padding-bottom: 0.1rem;">
+          <a href={base + "/press"} style="font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem; color: var(--color-coral); text-decoration: none; border-bottom: 2px solid var(--color-coral); padding-bottom: 0.1rem;">
             Read Press Coverage &rarr;
           </a>
         </div>
@@ -397,10 +398,10 @@ import Layout from '../layouts/Layout.astro';
         No contract required.
       </p>
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <a href="/rates" style="display: inline-block; background: #fff; color: var(--color-coral); font-family: var(--font-display); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.875rem 2rem; font-size: 0.95rem; text-decoration: none;">
+        <a href={base + "/rates"} style="display: inline-block; background: #fff; color: var(--color-coral); font-family: var(--font-display); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.875rem 2rem; font-size: 0.95rem; text-decoration: none;">
           View Rates
         </a>
-        <a href="/contact" style="display: inline-block; border: 2px solid rgba(255,255,255,0.6); color: #fff; font-family: var(--font-display); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.875rem 2rem; font-size: 0.95rem; text-decoration: none;">
+        <a href={base + "/contact"} style="display: inline-block; border: 2px solid rgba(255,255,255,0.6); color: #fff; font-family: var(--font-display); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.875rem 2rem; font-size: 0.95rem; text-decoration: none;">
           Visit Us
         </a>
       </div>

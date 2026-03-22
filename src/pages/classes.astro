@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const schedule = [
   {
@@ -229,7 +230,7 @@ const classTypes = ["All", "Cardio", "Martial Arts", "Flexibility", "Kids"];
         <a href="tel:+15032328311" style="display: inline-block; background: var(--color-navy); color: #fff; font-family: var(--font-display); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.875rem 2rem; font-size: 0.95rem; text-decoration: none;">
           Call 503-232-8311
         </a>
-        <a href="/rates" style="display: inline-block; border: 2px solid var(--color-navy); color: var(--color-navy); font-family: var(--font-display); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.875rem 2rem; font-size: 0.95rem; text-decoration: none;">
+        <a href={base + "/rates"} style="display: inline-block; border: 2px solid var(--color-navy); color: var(--color-navy); font-family: var(--font-display); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.875rem 2rem; font-size: 0.95rem; text-decoration: none;">
           View Membership Rates
         </a>
       </div>
