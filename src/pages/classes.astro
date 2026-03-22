@@ -1,0 +1,239 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const schedule = [
+  {
+    day: "Wednesday",
+    classes: [
+      {
+        time: "5:00 – 6:00 pm",
+        name: "Step Aerobics",
+        instructor: "Erin",
+        type: "Cardio",
+        color: "var(--color-coral)",
+      },
+      {
+        time: "8:00 – 9:00 pm",
+        name: "Karate",
+        instructor: "Ana Hurtado-Gonzalez",
+        type: "Martial Arts",
+        color: "var(--color-navy)",
+      },
+    ],
+  },
+  {
+    day: "Thursday",
+    classes: [
+      {
+        time: "5:00 – 6:00 pm",
+        name: "Kids Karate",
+        instructor: "Jerry Keeler",
+        type: "Martial Arts · Kids",
+        color: "var(--color-sage)",
+      },
+      {
+        time: "6:00 – 7:00 pm",
+        name: "Adult Karate",
+        instructor: "Jerry Keeler",
+        type: "Martial Arts",
+        color: "var(--color-navy)",
+      },
+      {
+        time: "6:00 – 7:00 pm",
+        name: "Yoga",
+        instructor: "Aaron",
+        type: "Flexibility",
+        color: "var(--color-sage)",
+      },
+    ],
+  },
+  {
+    day: "Saturday",
+    classes: [
+      {
+        time: "8:30 – 9:45 am",
+        name: "Step Aerobics",
+        instructor: "Kay",
+        type: "Cardio",
+        color: "var(--color-coral)",
+      },
+    ],
+  },
+];
+
+const classTypes = ["All", "Cardio", "Martial Arts", "Flexibility", "Kids"];
+---
+
+<Layout
+  title="Class Schedule"
+  description="Loprinzi's Gym class schedule — Step Aerobics, Yoga, Karate and more. Portland's original gym with group fitness classes."
+>
+
+  <!-- Hero -->
+  <div style="background: var(--color-navy); padding: 5rem 1.5rem 4rem; position: relative; overflow: hidden;">
+    <div style="position: absolute; inset: 0; background: repeating-linear-gradient(45deg, rgba(255,255,255,0.01) 0, rgba(255,255,255,0.01) 1px, transparent 0, transparent 50%); background-size: 20px 20px;"></div>
+    <div style="max-width: 800px; margin: 0 auto; position: relative; z-index: 1;">
+      <p class="section-subtitle" style="margin-bottom: 0.75rem;">Group Fitness</p>
+      <h1 style="font-family: var(--font-display); font-weight: 900; font-size: clamp(2.5rem, 8vw, 5rem); text-transform: uppercase; letter-spacing: 0.06em; color: #fff; line-height: 0.95; margin-bottom: 1.5rem;">
+        Class<br/><span style="color: var(--color-gold);">Schedule</span>
+      </h1>
+      <p style="font-size: 1.1rem; color: rgba(245,240,235,0.75); max-width: 520px; line-height: 1.75;">
+        From step aerobics to martial arts to yoga — Loprinzi's group classes are included with your membership.
+        No sign-up required, just show up.
+      </p>
+    </div>
+  </div>
+
+  <!-- Red banner -->
+  <div class="red-banner">
+    All Classes Included With Membership &nbsp;·&nbsp; No Sign-Up Required
+  </div>
+
+  <!-- Schedule -->
+  <section style="padding: 5rem 1.5rem; background: var(--color-cream);" aria-labelledby="schedule-heading">
+    <div style="max-width: 1000px; margin: 0 auto;">
+
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <h2 id="schedule-heading" class="section-title" style="font-size: clamp(2rem, 5vw, 2.75rem); margin-bottom: 1rem;">
+          Weekly Schedule
+        </h2>
+        <p style="color: var(--color-warm-gray); font-size: 1rem; max-width: 480px; margin: 0 auto; line-height: 1.7;">
+          Our instructors bring decades of experience and genuine passion to every class.
+        </p>
+      </div>
+
+      <!-- Days -->
+      <div style="display: flex; flex-direction: column; gap: 3rem;">
+        {schedule.map(day => (
+          <div>
+            <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem;">
+              <h3 style="font-family: var(--font-display); font-weight: 900; font-size: 1.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-navy); margin: 0; white-space: nowrap;">
+                {day.day}
+              </h3>
+              <div style="flex: 1; height: 2px; background: linear-gradient(to right, var(--color-gold), transparent); opacity: 0.4;"></div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem;">
+              {day.classes.map(cls => (
+                <div class="class-card" style={`border-left-color: ${cls.color};`}>
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.75rem;">
+                    <span style={`font-family: var(--font-display); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: ${cls.color};`}>
+                      {cls.type}
+                    </span>
+                    <span style="font-family: var(--font-display); font-weight: 600; font-size: 0.8rem; color: var(--color-warm-gray); white-space: nowrap; text-transform: uppercase; letter-spacing: 0.05em;">
+                      {cls.time}
+                    </span>
+                  </div>
+                  <h4 style="font-family: var(--font-display); font-weight: 900; font-size: 1.35rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-navy); margin: 0 0 0.4rem;">
+                    {cls.name}
+                  </h4>
+                  <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-warm-gray)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                      <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                    <span style="font-size: 0.9rem; color: var(--color-warm-gray);">w/ {cls.instructor}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Divider -->
+      <div class="ornament-divider" style="margin: 4rem 0;"></div>
+
+      <!-- Class descriptions -->
+      <h2 class="section-title" style="font-size: clamp(1.5rem, 4vw, 2.25rem); margin-bottom: 2rem; text-align: center;">
+        About Our Classes
+      </h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem;">
+
+        <div class="card" style="padding: 1.75rem;">
+          <div style="width: 44px; height: 44px; background: var(--color-coral); border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+          </div>
+          <h3 style="font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-navy); margin-bottom: 0.5rem;">Step Aerobics</h3>
+          <p style="font-size: 0.9rem; color: var(--color-warm-gray); line-height: 1.7; margin: 0;">
+            A classic cardio format that stands the test of time. Step aerobics builds cardiovascular endurance,
+            leg strength, and coordination. Led by Erin on Wednesdays and Kay on Saturdays.
+          </p>
+        </div>
+
+        <div class="card" style="padding: 1.75rem;">
+          <div style="width: 44px; height: 44px; background: var(--color-navy); border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M8 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <h3 style="font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-navy); margin-bottom: 0.5rem;">Karate</h3>
+          <p style="font-size: 0.9rem; color: var(--color-warm-gray); line-height: 1.7; margin: 0;">
+            Traditional martial arts training for all levels. Wednesday evening classes with Ana Hurtado-Gonzalez
+            and Thursday classes (both kids and adults) with Jerry Keeler. Focus on discipline, technique, and strength.
+          </p>
+        </div>
+
+        <div class="card" style="padding: 1.75rem;">
+          <div style="width: 44px; height: 44px; background: var(--color-sage); border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <h3 style="font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-navy); margin-bottom: 0.5rem;">Yoga</h3>
+          <p style="font-size: 0.9rem; color: var(--color-warm-gray); line-height: 1.7; margin: 0;">
+            Thursday evening yoga with Aaron. A grounding, restorative practice that complements your strength
+            training. Focus on flexibility, breath, and recovery. All levels welcome.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Info strip -->
+  <section style="background: var(--color-navy); padding: 3rem 1.5rem;">
+    <div style="max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 3rem; justify-content: space-around;">
+      {[
+        { icon: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z", label: "All Levels Welcome", desc: "No experience necessary" },
+        { icon: "M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75", label: "Community Feel", desc: "Portland's original gym family" },
+        { icon: "M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6", label: "No Extra Fees", desc: "Classes included with membership" },
+      ].map(item => (
+        <div style="text-align: center; max-width: 200px;">
+          <div style="width: 56px; height: 56px; background: rgba(255,255,255,0.08); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d={item.icon}/>
+            </svg>
+          </div>
+          <p style="font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.9rem; color: #fff; margin: 0 0 0.4rem;">{item.label}</p>
+          <p style="font-size: 0.85rem; color: rgba(245,240,235,0.55); margin: 0;">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding: 4rem 1.5rem; background: var(--color-cream-dark); text-align: center;">
+    <div style="max-width: 600px; margin: 0 auto;">
+      <h2 class="section-title" style="font-size: clamp(1.5rem, 4vw, 2.5rem); margin-bottom: 1rem;">
+        Questions About Classes?
+      </h2>
+      <p style="color: var(--color-warm-gray); font-size: 1rem; line-height: 1.7; margin-bottom: 2rem;">
+        Call us or just come by. We're happy to talk you through the schedule and find
+        the right fit for your goals.
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="tel:+15032328311" style="display: inline-block; background: var(--color-navy); color: #fff; font-family: var(--font-display); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.875rem 2rem; font-size: 0.95rem; text-decoration: none;">
+          Call 503-232-8311
+        </a>
+        <a href="/rates" style="display: inline-block; border: 2px solid var(--color-navy); color: var(--color-navy); font-family: var(--font-display); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.875rem 2rem; font-size: 0.95rem; text-decoration: none;">
+          View Membership Rates
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

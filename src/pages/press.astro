@@ -1,0 +1,259 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pressLinks = [
+  {
+    publication: "T Nation",
+    title: "The Mecca of Portland",
+    description: "T Nation calls Loprinzi's the gold standard of authentic Portland gym culture — a deep dive into what makes it special.",
+    href: "https://www.t-nation.com/training/the-mecca-of-portland/",
+    year: "2016",
+    accent: "var(--color-coral)",
+  },
+  {
+    publication: "Willamette Week",
+    title: "Stickin' With It",
+    description: "How Loprinzi's Gym has survived and thrived while the fitness industry has changed everything around it.",
+    href: "https://www.wweek.com/portland/article-15440-stickin-with-it.html",
+    year: "2012",
+    accent: "var(--color-navy)",
+  },
+  {
+    publication: "Portland Monthly",
+    title: "Portland Monthly Feature",
+    description: "Portland Monthly's look at one of the city's most beloved and enduring fitness institutions.",
+    href: "https://www.pdxmonthly.com/",
+    year: null,
+    accent: "var(--color-sage)",
+  },
+  {
+    publication: "PSU Vanguard",
+    title: "The Last Real Gym",
+    description: "Portland State University's student newspaper declares Loprinzi's the last authentic gym in a city full of boutique fitness studios.",
+    href: "https://psuvanguard.com/the-last-real-gym/",
+    year: "2019",
+    accent: "var(--color-gold)",
+  },
+  {
+    publication: "L'Italo-Americano",
+    title: "Italian-American Heritage Feature",
+    description: "The Italian-American newspaper celebrates the Loprinzi family's legacy as icons of the Italian immigrant experience in Portland.",
+    href: "https://www.italoamericano.org/",
+    year: null,
+    accent: "var(--color-coral)",
+  },
+];
+---
+
+<Layout
+  title="Press & Media"
+  description="Loprinzi's Gym in the press — videos, articles, and features about Portland's legendary gym and the Loprinzi family legacy."
+>
+
+  <!-- Hero -->
+  <div style="background: var(--color-navy); padding: 5rem 1.5rem 4rem; position: relative; overflow: hidden;">
+    <div style="position: absolute; inset: 0; background: repeating-linear-gradient(45deg, rgba(255,255,255,0.01) 0, rgba(255,255,255,0.01) 1px, transparent 0, transparent 50%); background-size: 20px 20px;"></div>
+    <div style="max-width: 800px; margin: 0 auto; position: relative; z-index: 1;">
+      <p class="section-subtitle" style="margin-bottom: 0.75rem;">Film, Print & Digital</p>
+      <h1 style="font-family: var(--font-display); font-weight: 900; font-size: clamp(2.5rem, 8vw, 5rem); text-transform: uppercase; letter-spacing: 0.06em; color: #fff; line-height: 0.95; margin-bottom: 1.5rem;">
+        Press<br/><span style="color: var(--color-gold);">&amp; Media</span>
+      </h1>
+      <p style="font-size: 1.1rem; color: rgba(245,240,235,0.75); max-width: 520px; line-height: 1.75;">
+        The story of Loprinzi's Gym has been told by journalists, filmmakers, and athletes alike.
+        A legend worth documenting.
+      </p>
+    </div>
+  </div>
+
+  <!-- Red banner -->
+  <div class="red-banner">
+    "Good Health — Your Most Valuable Possession"
+  </div>
+
+  <!-- Videos section -->
+  <section style="padding: 5rem 1.5rem; background: var(--color-cream);" aria-labelledby="videos-heading">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <p class="section-subtitle" style="margin-bottom: 0.5rem;">Documentary Film</p>
+        <h2 id="videos-heading" class="section-title" style="font-size: clamp(2rem, 5vw, 2.75rem);">
+          See the Gym in Action
+        </h2>
+        <p style="color: var(--color-warm-gray); font-size: 1rem; max-width: 500px; margin: 0.75rem auto 0; line-height: 1.7;">
+          Filmmakers have been drawn to Loprinzi's for its authenticity. Here are two essential films.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 2rem;" class="video-grid">
+
+        <!-- Video 1: Loprinzi's Iron -->
+        <div>
+          <div class="video-container card" style="border-radius: 2px; overflow: hidden; margin-bottom: 1.25rem;">
+            <iframe
+              src="https://www.youtube.com/embed/lX9zJXqOtpA"
+              title="Loprinzi's Iron — Documentary by MomentMotionMedia"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+              <span style="background: var(--color-coral); color: #fff; font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.7rem; padding: 0.25rem 0.6rem;">Film</span>
+              <span style="font-family: var(--font-display); font-size: 0.8rem; color: var(--color-warm-gray); text-transform: uppercase; letter-spacing: 0.06em;">MomentMotionMedia</span>
+            </div>
+            <h3 style="font-family: var(--font-display); font-weight: 800; font-size: 1.35rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-navy); margin-bottom: 0.5rem;">
+              Loprinzi's Iron
+            </h3>
+            <p style="font-size: 0.9rem; color: var(--color-warm-gray); line-height: 1.7; margin: 0;">
+              An intimate portrait of Loprinzi's Gym, its history, and the people who keep coming back.
+              MomentMotionMedia captures the soul of Portland's most authentic gym in this beautifully crafted short film.
+            </p>
+          </div>
+        </div>
+
+        <!-- Video 2: Loprinzi's Gym Portland Oregon -->
+        <div>
+          <div class="video-container card" style="border-radius: 2px; overflow: hidden; margin-bottom: 1.25rem;">
+            <iframe
+              src="https://www.youtube.com/embed/DwY8Y-cgIJ0"
+              title="Loprinzi's Gym Portland Oregon — Documentary"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+              <span style="background: var(--color-navy); color: #fff; font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.7rem; padding: 0.25rem 0.6rem;">Documentary</span>
+              <span style="font-family: var(--font-display); font-size: 0.8rem; color: var(--color-warm-gray); text-transform: uppercase; letter-spacing: 0.06em;">Portland</span>
+            </div>
+            <h3 style="font-family: var(--font-display); font-weight: 800; font-size: 1.35rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-navy); margin-bottom: 0.5rem;">
+              Loprinzi's Gym Portland Oregon
+            </h3>
+            <p style="font-size: 0.9rem; color: var(--color-warm-gray); line-height: 1.7; margin: 0;">
+              A look inside Loprinzi's — the iron, the history, the people. This documentary captures
+              what makes the gym truly one of a kind in Portland and the American fitness landscape.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Press coverage -->
+  <section style="padding: 0 1.5rem 5rem; background: var(--color-cream);" aria-labelledby="press-heading">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <div class="ornament-divider" style="margin-bottom: 3rem;"></div>
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <p class="section-subtitle" style="margin-bottom: 0.5rem;">Print &amp; Digital</p>
+        <h2 id="press-heading" class="section-title" style="font-size: clamp(2rem, 5vw, 2.75rem);">
+          Press Coverage
+        </h2>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+        {pressLinks.map(item => (
+          <a
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="press-link"
+            aria-label={`${item.title} — ${item.publication}`}
+          >
+            <div style={`width: 6px; height: 100%; min-height: 60px; background: ${item.accent}; border-radius: 2px; flex-shrink: 0;`}></div>
+            <div style="flex: 1; min-width: 0;">
+              <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.4rem; flex-wrap: wrap;">
+                <span style={`font-family: var(--font-display); font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem; color: ${item.accent};`}>
+                  {item.publication}
+                </span>
+                {item.year && (
+                  <span style="font-family: var(--font-display); font-size: 0.75rem; color: var(--color-warm-gray); text-transform: uppercase; letter-spacing: 0.06em;">
+                    {item.year}
+                  </span>
+                )}
+              </div>
+              <h3 style="font-family: var(--font-display); font-weight: 800; font-size: 1.15rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-navy); margin-bottom: 0.35rem;">
+                {item.title}
+              </h3>
+              <p style="font-size: 0.875rem; color: var(--color-warm-gray); line-height: 1.6; margin: 0;">
+                {item.description}
+              </p>
+            </div>
+            <div style="flex-shrink: 0; align-self: center; opacity: 0.4;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15,3 21,3 21,9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Press photo -->
+  <section style="padding: 0 1.5rem 5rem; background: var(--color-cream);">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <div class="card" style="overflow: hidden; position: relative;">
+        <img
+          src="/images/press-ww.jpg"
+          alt="Loprinzi's Gym as featured in Willamette Week"
+          width="1200"
+          height="500"
+          loading="lazy"
+          style="width: 100%; height: clamp(250px, 40vw, 450px); object-fit: cover; display: block;"
+        />
+        <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(26,39,68,0.9) 0%, transparent 100%); padding: 2rem;">
+          <p style="font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem; color: var(--color-gold); margin-bottom: 0.25rem;">
+            Willamette Week
+          </p>
+          <p style="font-family: var(--font-display); font-weight: 800; font-size: clamp(1.2rem, 3vw, 2rem); text-transform: uppercase; letter-spacing: 0.06em; color: #fff; margin: 0;">
+            "Stickin' With It"
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote from press -->
+  <section style="background: var(--color-navy); padding: 5rem 1.5rem; text-align: center;">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="var(--color-gold)" style="opacity: 0.4; margin-bottom: 2rem;">
+        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+      </svg>
+      <blockquote style="font-family: var(--font-display); font-size: clamp(1.2rem, 3vw, 1.75rem); font-style: italic; color: #fff; line-height: 1.5; margin: 0 0 2rem;">
+        "A gym owner who actually cared about his pupils — who loved them. He was a man of strength
+        and muscle but much more than that, a man who left behind a legacy, rich not just in the
+        memory of what he accomplished, but even more so of the gracious spirit that he embodied."
+      </blockquote>
+      <footer style="font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem; color: var(--color-coral);">
+        — Iron Game History, on Sam Loprinzi
+      </footer>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section style="padding: 4rem 1.5rem; background: var(--color-cream-dark); text-align: center;">
+    <div style="max-width: 500px; margin: 0 auto;">
+      <h2 class="section-title" style="font-size: clamp(1.5rem, 4vw, 2.25rem); margin-bottom: 1rem;">
+        Media Inquiries
+      </h2>
+      <p style="color: var(--color-warm-gray); font-size: 1rem; line-height: 1.7; margin-bottom: 2rem;">
+        For press requests, interviews, or filming at Loprinzi's Gym, please get in touch.
+      </p>
+      <a href="mailto:loprinzisgym@yahoo.com" style="display: inline-block; background: var(--color-navy); color: #fff; font-family: var(--font-display); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.875rem 2rem; font-size: 0.95rem; text-decoration: none;">
+        loprinzisgym@yahoo.com
+      </a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  @media (max-width: 700px) {
+    .video-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>

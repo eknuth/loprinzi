@@ -1,0 +1,258 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const hours = [
+  { day: "Monday", open: "6:00 am", close: "9:00 pm" },
+  { day: "Tuesday", open: "6:00 am", close: "9:00 pm" },
+  { day: "Wednesday", open: "6:00 am", close: "9:00 pm" },
+  { day: "Thursday", open: "6:00 am", close: "9:00 pm" },
+  { day: "Friday", open: "6:00 am", close: "9:00 pm" },
+  { day: "Saturday", open: "7:30 am", close: "5:00 pm" },
+  { day: "Sunday", open: "8:00 am", close: "5:00 pm" },
+];
+
+const today = new Date().toLocaleDateString("en-US", { weekday: "long" });
+---
+
+<Layout
+  title="Contact & Location"
+  description="Loprinzi's Gym — 2414 SE 41st Ave, Portland Oregon 97214. Call 503-232-8311. Open 6 days a week starting at 6am."
+>
+
+  <!-- Hero -->
+  <div style="background: var(--color-navy); padding: 5rem 1.5rem 4rem; position: relative; overflow: hidden;">
+    <div style="position: absolute; inset: 0; background: repeating-linear-gradient(45deg, rgba(255,255,255,0.01) 0, rgba(255,255,255,0.01) 1px, transparent 0, transparent 50%); background-size: 20px 20px;"></div>
+    <div style="max-width: 800px; margin: 0 auto; position: relative; z-index: 1;">
+      <p class="section-subtitle" style="margin-bottom: 0.75rem;">Portland, Oregon</p>
+      <h1 style="font-family: var(--font-display); font-weight: 900; font-size: clamp(2.5rem, 8vw, 5rem); text-transform: uppercase; letter-spacing: 0.06em; color: #fff; line-height: 0.95; margin-bottom: 1.5rem;">
+        Come<br/><span style="color: var(--color-gold);">Train With Us</span>
+      </h1>
+      <p style="font-size: 1.1rem; color: rgba(245,240,235,0.75); max-width: 520px; line-height: 1.75;">
+        No appointment needed. Just come in. We've been welcoming Portland since 1948 —
+        the door is always open.
+      </p>
+    </div>
+  </div>
+
+  <!-- Quick contact bar -->
+  <div style="background: var(--color-coral); padding: 0;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; divide-x-0;">
+      <a href="tel:+15032328311" style="flex: 1; min-width: 200px; display: flex; align-items: center; gap: 0.75rem; padding: 1.25rem 2rem; text-decoration: none; color: #fff; background: var(--color-coral); transition: background 0.2s; border-right: 1px solid rgba(255,255,255,0.2);" onmouseover="this.style.background='var(--color-coral-dark)'" onmouseout="this.style.background='var(--color-coral)'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.56 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        <div>
+          <p style="font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.7rem; opacity: 0.8; margin: 0;">Call Us</p>
+          <p style="font-family: var(--font-display); font-weight: 800; font-size: 1.1rem; letter-spacing: 0.04em; margin: 0;">503-232-8311</p>
+        </div>
+      </a>
+      <a href="mailto:loprinzisgym@yahoo.com" style="flex: 1; min-width: 200px; display: flex; align-items: center; gap: 0.75rem; padding: 1.25rem 2rem; text-decoration: none; color: #fff; background: var(--color-coral); transition: background 0.2s; border-right: 1px solid rgba(255,255,255,0.2);" onmouseover="this.style.background='var(--color-coral-dark)'" onmouseout="this.style.background='var(--color-coral)'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        <div>
+          <p style="font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.7rem; opacity: 0.8; margin: 0;">Email</p>
+          <p style="font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; margin: 0;">loprinzisgym@yahoo.com</p>
+        </div>
+      </a>
+      <a href="https://maps.google.com/?q=2414+SE+41st+Ave+Portland+OR+97214" target="_blank" rel="noopener" style="flex: 1; min-width: 200px; display: flex; align-items: center; gap: 0.75rem; padding: 1.25rem 2rem; text-decoration: none; color: #fff; background: var(--color-coral); transition: background 0.2s;" onmouseover="this.style.background='var(--color-coral-dark)'" onmouseout="this.style.background='var(--color-coral)'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        <div>
+          <p style="font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.7rem; opacity: 0.8; margin: 0;">Address</p>
+          <p style="font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; margin: 0;">2414 SE 41st Ave, Portland OR</p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <section style="padding: 5rem 1.5rem; background: var(--color-cream);" aria-labelledby="contact-info-heading">
+    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;" class="contact-grid">
+
+      <!-- Left: Hours + info -->
+      <div>
+        <h2 id="contact-info-heading" class="section-title" style="font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: 2rem;">
+          Hours &amp; Information
+        </h2>
+
+        <!-- Hours table -->
+        <div class="card" style="overflow: hidden; margin-bottom: 2rem;">
+          <div style="background: var(--color-navy); padding: 1rem 1.5rem;">
+            <h3 style="font-family: var(--font-display); font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem; color: var(--color-gold); margin: 0;">Hours of Operation</h3>
+          </div>
+          <table style="width: 100%; border-collapse: collapse;" aria-label="Gym hours">
+            <tbody>
+              {hours.map(h => (
+                <tr style={h.day === today ? "background: rgba(232,93,93,0.06);" : ""}>
+                  <td style={`padding: 0.875rem 1.5rem; font-family: var(--font-display); font-weight: ${h.day === today ? "700" : "500"}; font-size: 0.95rem; color: ${h.day === today ? "var(--color-coral)" : "var(--color-charcoal)"}; border-bottom: 1px solid var(--color-cream-dark);`}>
+                    {h.day}
+                    {h.day === today && (
+                      <span style="display: inline-block; background: var(--color-coral); color: #fff; font-size: 0.65rem; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.06em; padding: 0.1rem 0.4rem; margin-left: 0.5rem; vertical-align: middle; border-radius: 2px;">Today</span>
+                    )}
+                  </td>
+                  <td style={`padding: 0.875rem 1.5rem; text-align: right; font-family: var(--font-display); font-weight: 600; font-size: 0.9rem; color: var(--color-navy); border-bottom: 1px solid var(--color-cream-dark);`}>
+                    {h.open} – {h.close}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Address block -->
+        <div style="background: var(--color-cream-dark); padding: 1.75rem; margin-bottom: 2rem;">
+          <h3 style="font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem; color: var(--color-navy); margin-bottom: 1rem;">
+            Find Us
+          </h3>
+          <address style="font-style: normal; margin: 0;">
+            <p style="font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; color: var(--color-navy); margin-bottom: 0.25rem;">
+              Loprinzi's Gym
+            </p>
+            <p style="font-size: 1rem; color: var(--color-charcoal); line-height: 1.7; margin-bottom: 0.5rem;">
+              2414 SE 41st Ave<br/>
+              Portland, Oregon 97214-5928
+            </p>
+            <p style="font-family: var(--font-display); font-size: 0.8rem; color: var(--color-warm-gray); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem;">
+              Just off SE Division Street
+            </p>
+            <a
+              href="https://maps.google.com/?q=2414+SE+41st+Ave+Portland+OR+97214"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem; color: var(--color-coral); text-decoration: none; border-bottom: 2px solid var(--color-coral); padding-bottom: 0.1rem;"
+            >
+              Get Directions
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </address>
+        </div>
+
+        <!-- Contact info -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="card" style="padding: 1.25rem; text-align: center;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-coral)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 0.5rem;">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.56 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <p style="font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.75rem; color: var(--color-warm-gray); margin-bottom: 0.25rem;">Phone</p>
+            <a href="tel:+15032328311" style="font-family: var(--font-display); font-weight: 800; font-size: 1.1rem; color: var(--color-navy); text-decoration: none;">503-232-8311</a>
+          </div>
+          <div class="card" style="padding: 1.25rem; text-align: center;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-coral)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 0.5rem;">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <p style="font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.75rem; color: var(--color-warm-gray); margin-bottom: 0.25rem;">Email</p>
+            <a href="mailto:loprinzisgym@yahoo.com" style="font-family: var(--font-display); font-weight: 700; font-size: 0.8rem; color: var(--color-navy); text-decoration: none; word-break: break-all;">loprinzisgym<br/>@yahoo.com</a>
+          </div>
+        </div>
+
+        <!-- Social -->
+        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--color-cream-dark);">
+          <h3 style="font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem; color: var(--color-navy); margin-bottom: 1rem;">
+            Follow Us
+          </h3>
+          <div style="display: flex; gap: 1rem;">
+            <a href="https://www.facebook.com/LoprinzisGym/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1.25rem; background: var(--color-navy); color: #fff; text-decoration: none; font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.8rem; transition: background 0.2s;" aria-label="Follow us on Facebook" onmouseover="this.style.background='var(--color-navy-light)'" onmouseout="this.style.background='var(--color-navy)'">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+              Facebook
+            </a>
+            <a href="https://www.instagram.com/loprinzisgym/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1.25rem; background: var(--color-coral); color: #fff; text-decoration: none; font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.8rem; transition: background 0.2s;" aria-label="Follow us on Instagram" onmouseover="this.style.background='var(--color-coral-dark)'" onmouseout="this.style.background='var(--color-coral)'">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+              Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Map -->
+      <div>
+        <h2 class="section-title" style="font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: 2rem;">
+          Find Us
+        </h2>
+
+        <!-- Embedded Google Map -->
+        <div style="border-radius: 2px; overflow: hidden; box-shadow: 0 4px 24px rgba(26,39,68,0.12); margin-bottom: 1.5rem;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2797.7382760948985!2d-122.62318572390765!3d45.50771933439157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5495a083b01b9f23%3A0xb5c28ee696e34ab7!2sLoprinzi&#39;s%20Gym!5e0!3m2!1sen!2sus!4v1710000000000!5m2!1sen!2sus"
+            width="100%"
+            height="420"
+            style="border:0; display: block;"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Map to Loprinzi's Gym at 2414 SE 41st Ave Portland OR"
+          ></iframe>
+        </div>
+
+        <!-- Neighborhood note -->
+        <div style="background: var(--color-cream-dark); padding: 1.5rem; border-left: 4px solid var(--color-gold);">
+          <h3 style="font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem; color: var(--color-navy); margin-bottom: 0.75rem;">
+            Getting Here
+          </h3>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.6rem;">
+            <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.9rem; color: var(--color-charcoal); line-height: 1.6;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.15rem;">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              Located just off SE Division Street — one of Portland's most beloved corridors
+            </li>
+            <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.9rem; color: var(--color-charcoal); line-height: 1.6;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.15rem;">
+                <rect x="1" y="3" width="15" height="13"/>
+                <polygon points="16,8 20,8 23,11 23,16 16,16 16,8"/>
+                <circle cx="5.5" cy="18.5" r="2.5"/>
+                <circle cx="18.5" cy="18.5" r="2.5"/>
+              </svg>
+              Street parking available on SE 41st Ave and nearby streets
+            </li>
+            <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.9rem; color: var(--color-charcoal); line-height: 1.6;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.15rem;">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+              TriMet bus lines serve SE Division — check trimet.org for routes
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Heritage note -->
+  <section style="background: var(--color-navy); padding: 4rem 1.5rem; text-align: center;">
+    <div style="max-width: 700px; margin: 0 auto;">
+      <p style="font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.8rem; color: var(--color-gold); margin-bottom: 1rem;">
+        Since 1948
+      </p>
+      <h2 style="font-family: var(--font-display); font-weight: 900; font-size: clamp(1.75rem, 5vw, 3rem); text-transform: uppercase; letter-spacing: 0.06em; color: #fff; margin-bottom: 1rem;">
+        We'd Love to See You
+      </h2>
+      <p style="font-size: 1rem; color: rgba(245,240,235,0.7); line-height: 1.75; margin-bottom: 0.5rem;">
+        Loprinzi's Gym is more than a gym — it's Portland's fitness heritage.
+        Come feel the difference that over 75 years of dedication makes.
+      </p>
+      <p style="font-family: var(--font-display); font-style: italic; font-size: 1.1rem; color: var(--color-gold); margin-top: 1.5rem;">
+        "Good health — your most valuable possession."
+      </p>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  @media (max-width: 900px) {
+    .contact-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>

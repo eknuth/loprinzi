@@ -1,1 +1,320 @@
 @import "tailwindcss";
+
+@theme {
+  --color-navy: #1a2744;
+  --color-navy-light: #243460;
+  --color-cream: #f5f0eb;
+  --color-cream-dark: #ede5d8;
+  --color-coral: #e85d5d;
+  --color-coral-dark: #c94a4a;
+  --color-gold: #d4a843;
+  --color-gold-dark: #b8902e;
+  --color-sage: #6b8f4e;
+  --color-sage-dark: #4f6b39;
+  --color-charcoal: #2d2d2d;
+  --color-warm-gray: #8a7f75;
+
+  --font-display: "Barlow Condensed", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Barlow", ui-sans-serif, system-ui, sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
+
+/* Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+
+/* Nav */
+.nav-link {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-cream);
+  opacity: 0.85;
+  transition: opacity 0.2s ease, color 0.2s ease;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  opacity: 1;
+  color: var(--color-gold);
+  border-bottom-color: var(--color-gold);
+}
+
+/* Wordmark */
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Sections */
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-navy);
+}
+
+.section-subtitle {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-coral);
+  font-size: 0.875rem;
+}
+
+/* Red banner */
+.red-banner {
+  background-color: var(--color-coral);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+  padding: 0.875rem 1rem;
+  font-size: 1.1rem;
+}
+
+/* Vintage blockquote */
+.vintage-quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.35rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-navy);
+  border-left: 4px solid var(--color-gold);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+}
+
+/* Cards */
+.card {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 12px rgba(26,39,68,0.08);
+  overflow: hidden;
+}
+
+/* Divider */
+.ornament-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.ornament-divider::before,
+.ornament-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-gold);
+  opacity: 0.4;
+}
+
+/* Table */
+.rates-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rates-table th {
+  background: var(--color-navy);
+  color: var(--color-cream);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.rates-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-cream-dark);
+  font-size: 0.95rem;
+}
+
+.rates-table tr:last-child td {
+  border-bottom: none;
+}
+
+.rates-table tr:hover td {
+  background: rgba(26,39,68,0.03);
+}
+
+.rates-table td:not(:first-child) {
+  font-weight: 600;
+  color: var(--color-navy);
+}
+
+/* Mobile nav toggle */
+.mobile-menu {
+  display: none;
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+/* Hero gradient */
+.hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 39, 68, 0.7) 0%,
+    rgba(26, 39, 68, 0.55) 60%,
+    rgba(26, 39, 68, 0.82) 100%
+  );
+}
+
+/* YouTube embed */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Press links */
+.press-link {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(26,39,68,0.07);
+  transition: box-shadow 0.2s, transform 0.2s;
+  text-decoration: none;
+}
+
+.press-link:hover {
+  box-shadow: 0 4px 20px rgba(26,39,68,0.12);
+  transform: translateY(-1px);
+}
+
+/* Animate on scroll — simple fade-in */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up { animation: none; }
+}
+
+/* Timeline */
+.timeline-item {
+  position: relative;
+  padding-left: 2rem;
+  padding-bottom: 2.5rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.4rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-coral);
+  box-shadow: 0 0 0 3px rgba(232,93,93,0.2);
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 1rem;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-coral), var(--color-gold));
+  opacity: 0.3;
+}
+
+.timeline-item:last-child::after {
+  display: none;
+}
+
+/* Schedule card */
+.class-card {
+  background: #fff;
+  border-radius: 4px;
+  border-left: 4px solid var(--color-coral);
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(26,39,68,0.06);
+}
+
+.class-card:hover {
+  box-shadow: 0 4px 16px rgba(26,39,68,0.1);
+}
+
+/* Footer */
+footer a {
+  color: rgba(245, 240, 235, 0.7);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+footer a:hover {
+  color: var(--color-gold);
+}
+
+/* Utility overrides */
+.text-navy { color: var(--color-navy); }
+.text-coral { color: var(--color-coral); }
+.text-gold { color: var(--color-gold); }
+.text-sage { color: var(--color-sage); }
+.text-cream { color: var(--color-cream); }
+.bg-navy { background-color: var(--color-navy); }
+.bg-coral { background-color: var(--color-coral); }
+.bg-gold { background-color: var(--color-gold); }
+.bg-cream { background-color: var(--color-cream); }
+.bg-cream-dark { background-color: var(--color-cream-dark); }

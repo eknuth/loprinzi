@@ -1,0 +1,273 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description = "Loprinzi's Gym — Portland's legendary fitness institution since 1948. No contracts. No initiation fees. Just real iron.",
+  ogImage = "/images/gym-panorama.jpg",
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/history", label: "History" },
+  { href: "/rates", label: "Rates" },
+  { href: "/classes", label: "Classes" },
+  { href: "/press", label: "Press" },
+  { href: "/contact", label: "Contact" },
+];
+
+function isActive(href: string): boolean {
+  if (href === "/") return currentPath === "/";
+  return currentPath.startsWith(href);
+}
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | Loprinzi's Gym — Portland, Oregon Since 1948</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/src/styles/global.css" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <header style="background-color: var(--color-navy); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 16px rgba(0,0,0,0.3);">
+      <div style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 64px;">
+
+        <!-- Wordmark -->
+        <a href="/" class="wordmark" style="font-size: clamp(1.2rem, 3vw, 1.6rem); text-decoration: none;">
+          Loprinzi's
+          <span style="color: var(--color-coral); margin-left: 0.15em;">Gym</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav style="display: none;" class="desktop-nav" aria-label="Main navigation">
+          <ul style="display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; align-items: center;">
+            {navLinks.map(link => (
+              <li>
+                <a
+                  href={link.href}
+                  class={`nav-link${isActive(link.href) ? " active" : ""}`}
+                  aria-current={isActive(link.href) ? "page" : undefined}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <!-- Mobile hamburger -->
+        <button
+          id="menu-toggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          style="display: flex; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 0.5rem;"
+          class="hamburger"
+        >
+          <span style="display: block; width: 24px; height: 2px; background: var(--color-cream); transition: transform 0.2s, opacity 0.2s;" id="bar1"></span>
+          <span style="display: block; width: 24px; height: 2px; background: var(--color-cream); transition: opacity 0.2s;" id="bar2"></span>
+          <span style="display: block; width: 24px; height: 2px; background: var(--color-cream); transition: transform 0.2s, opacity 0.2s;" id="bar3"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="mobile-menu"
+        style="flex-direction: column; background-color: var(--color-navy-light); border-top: 1px solid rgba(255,255,255,0.1); padding: 1rem 1.5rem 1.5rem;"
+      >
+        <nav aria-label="Mobile navigation">
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+            {navLinks.map(link => (
+              <li>
+                <a
+                  href={link.href}
+                  class={`nav-link${isActive(link.href) ? " active" : ""}`}
+                  style="display: block; padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 1.1rem;"
+                  aria-current={isActive(link.href) ? "page" : undefined}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <p style="color: rgba(245,240,235,0.5); font-size: 0.8rem; margin-top: 1rem; font-family: var(--font-display); letter-spacing: 0.06em; text-transform: uppercase;">
+          503-232-8311 &nbsp;·&nbsp; 2414 SE 41st Ave, Portland OR
+        </p>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" tabindex="-1">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer style="background-color: var(--color-navy); color: var(--color-cream); padding: 4rem 1.5rem 2rem;">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
+
+          <!-- Brand column -->
+          <div>
+            <a href="/" class="wordmark" style="font-size: 1.8rem; display: inline-block; margin-bottom: 0.75rem;">
+              Loprinzi's<span style="color: var(--color-coral);">Gym</span>
+            </a>
+            <p style="font-family: var(--font-display); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.8rem; color: var(--color-gold); margin-bottom: 0.75rem;">
+              World Famous Since 1948
+            </p>
+            <p style="color: rgba(245,240,235,0.65); font-size: 0.9rem; line-height: 1.6; max-width: 260px;">
+              Portland's authentic iron paradise. No contracts. No initiation fees. Just results.
+            </p>
+          </div>
+
+          <!-- Hours -->
+          <div>
+            <h3 style="font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem; color: var(--color-gold); margin-bottom: 1rem;">
+              Hours
+            </h3>
+            <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.4rem;">
+              <li style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                <span style="color: rgba(245,240,235,0.65);">Mon – Fri</span>
+                <span>6:00 am – 9:00 pm</span>
+              </li>
+              <li style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                <span style="color: rgba(245,240,235,0.65);">Saturday</span>
+                <span>7:30 am – 5:00 pm</span>
+              </li>
+              <li style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                <span style="color: rgba(245,240,235,0.65);">Sunday</span>
+                <span>8:00 am – 5:00 pm</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <h3 style="font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem; color: var(--color-gold); margin-bottom: 1rem;">
+              Find Us
+            </h3>
+            <address style="font-style: normal; display: flex; flex-direction: column; gap: 0.5rem;">
+              <a href="https://maps.google.com/?q=2414+SE+41st+Ave+Portland+OR+97214" target="_blank" rel="noopener" style="font-size: 0.9rem;">
+                2414 SE 41st Ave<br />
+                Portland, Oregon 97214<br />
+                <span style="color: var(--color-gold); font-size: 0.8rem; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em;">Just off Division</span>
+              </a>
+              <a href="tel:+15032328311" style="font-size: 1rem; font-family: var(--font-display); font-weight: 600; letter-spacing: 0.04em;">
+                503-232-8311
+              </a>
+              <a href="mailto:loprinzisgym@yahoo.com" style="font-size: 0.875rem;">
+                loprinzisgym@yahoo.com
+              </a>
+            </address>
+          </div>
+
+          <!-- Social / Links -->
+          <div>
+            <h3 style="font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem; color: var(--color-gold); margin-bottom: 1rem;">
+              Follow Along
+            </h3>
+            <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+              <a href="https://www.facebook.com/LoprinzisGym/" target="_blank" rel="noopener" aria-label="Facebook" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.08); border-radius: 4px; transition: background 0.2s;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="color: var(--color-cream);">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/loprinzisgym/" target="_blank" rel="noopener" aria-label="Instagram" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.08); border-radius: 4px; transition: background 0.2s;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="color: var(--color-cream);">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </a>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.875rem;">
+              <a href="/history">History</a>
+              <a href="/rates">Membership Rates</a>
+              <a href="/classes">Class Schedule</a>
+              <a href="/press">Press & Media</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div style="padding-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center; font-size: 0.8rem; color: rgba(245,240,235,0.4);">
+          <p style="margin: 0; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.06em;">
+            &copy; {new Date().getFullYear()} Loprinzi's Gym &nbsp;·&nbsp; Portland, Oregon
+          </p>
+          <p style="margin: 0; font-family: var(--font-display); font-style: italic; color: var(--color-gold); opacity: 0.7;">
+            "Good health — your most valuable possession"
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <style is:global>
+      @media (min-width: 768px) {
+        .desktop-nav {
+          display: flex !important;
+        }
+        .hamburger {
+          display: none !important;
+        }
+        #mobile-menu {
+          display: none !important;
+        }
+      }
+    </style>
+
+    <script>
+      const toggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("mobile-menu");
+      const bar1 = document.getElementById("bar1");
+      const bar2 = document.getElementById("bar2");
+      const bar3 = document.getElementById("bar3");
+
+      if (toggle && menu) {
+        toggle.addEventListener("click", () => {
+          const isOpen = menu.classList.contains("open");
+          if (isOpen) {
+            menu.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+            if (bar1) bar1.style.transform = "";
+            if (bar2) bar2.style.opacity = "1";
+            if (bar3) bar3.style.transform = "";
+          } else {
+            menu.classList.add("open");
+            toggle.setAttribute("aria-expanded", "true");
+            if (bar1) bar1.style.transform = "translateY(7px) rotate(45deg)";
+            if (bar2) bar2.style.opacity = "0";
+            if (bar3) bar3.style.transform = "translateY(-7px) rotate(-45deg)";
+          }
+        });
+
+        // Close on link click (mobile)
+        menu.querySelectorAll("a").forEach(link => {
+          link.addEventListener("click", () => {
+            menu.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+            if (bar1) bar1.style.transform = "";
+            if (bar2) bar2.style.opacity = "1";
+            if (bar3) bar3.style.transform = "";
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
