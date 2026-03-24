@@ -10,15 +10,21 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
   <!-- Page hero -->
   <div style="background: var(--color-navy); padding: 5rem 1.5rem 4rem; position: relative; overflow: hidden;">
-    <div style="position: absolute; inset: 0; background: repeating-linear-gradient(45deg, rgba(255,255,255,0.01) 0, rgba(255,255,255,0.01) 1px, transparent 0, transparent 50%); background-size: 20px 20px;"></div>
+    <img
+      src={base + "/images/gym-vintage-interior.jpg"}
+      alt=""
+      width="1600"
+      height="900"
+      style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.25;"
+    />
+    <div class="hero-overlay" style="position: absolute; inset: 0;"></div>
     <div style="max-width: 900px; margin: 0 auto; position: relative; z-index: 1;">
       <p class="section-subtitle" style="margin-bottom: 0.75rem;">Est. Portland, Oregon</p>
       <h1 style="font-family: var(--font-display); font-weight: 900; font-size: clamp(2.5rem, 8vw, 5.5rem); text-transform: uppercase; letter-spacing: 0.06em; color: #fff; line-height: 0.95; margin-bottom: 1.5rem;">
         The Definitive<br/><span style="color: var(--color-gold);">History</span>
       </h1>
       <p style="font-size: 1.1rem; color: rgba(245,240,235,0.75); max-width: 600px; line-height: 1.75;">
-        From a Sicilian vegetable cart to Portland's most legendary gym — the complete story of
-        the Loprinzi family, their iron, and the institution they built for the love of health.
+        How a Sicilian vegetable peddler's sons built Portland's oldest gym — and why it's still here.
       </p>
     </div>
   </div>
@@ -110,9 +116,22 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               — Joe Loprinzi
             </footer>
           </blockquote>
+          <div style="margin: 2rem 0;">
+            <img
+              src={base + "/images/homemade-weights.jpg"}
+              alt="Handmade cement and iron pipe barbells like the ones the Loprinzi brothers built"
+              width="700"
+              height="400"
+              loading="lazy"
+              style="width: 100%; height: 280px; object-fit: cover; border-radius: 2px; box-shadow: 8px 8px 0 var(--color-navy);"
+            />
+            <p style="font-size: 0.75rem; color: var(--color-warm-gray); margin-top: 0.5rem; font-style: italic;">
+              The Loprinzi brothers poured cement into cans and bent pipes into barbells.
+            </p>
+          </div>
           <p style="font-size: 1rem; line-height: 1.8; color: var(--color-charcoal);">
             What started next to their garage — friends and neighbors coming to work out in the yard — would
-            eventually grow into a legendary institution. Their brother <strong>Gus Loprinzi</strong>, a skilled metal
+            eventually grow into something bigger than any of them expected. Their brother <strong>Gus Loprinzi</strong>, a skilled metal
             worker, welded and fabricated Sam's first professional weight-lifting equipment. (Gus had even been
             slated to compete in boxing at the 1930 Olympics before breaking his jaw.)
           </p>
@@ -248,15 +267,18 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             </h3>
             <div>
               {[
-                { name: "Ken Patera", note: "Olympic Weightlifter — trained here and left his mark on the iron" },
-                { name: "Arnold Schwarzenegger", note: "7-time Mr. Olympia — autographed photo still hangs on the wall" },
-                { name: "Jesse Ventura", note: "Pro wrestler and future Governor of Minnesota" },
-                { name: "Bill Walton", note: "NBA Hall of Fame center for the Portland Trail Blazers" },
-                { name: "Lloyd Neal", note: "Portland Trail Blazers center" },
+                { name: "Ken Patera", note: "Olympic Weightlifter — trained here and left his mark on the iron", img: "/images/portrait-patera.jpg" },
+                { name: "Arnold Schwarzenegger", note: "7-time Mr. Olympia — autographed photo still hangs on the wall", img: "/images/portrait-arnold.jpg" },
+                { name: "Jesse Ventura", note: "Pro wrestler and future Governor of Minnesota", img: "/images/portrait-ventura.jpg" },
+                { name: "Bill Walton", note: "NBA Hall of Fame center for the Portland Trail Blazers", img: "/images/portrait-walton.jpg" },
+                { name: "Lloyd Neal", note: "Portland Trail Blazers center", img: "/images/portrait-neal.jpg" },
               ].map(person => (
-                <div class="timeline-item">
-                  <h4 style="font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--color-navy); margin: 0 0 0.25rem; text-transform: uppercase; letter-spacing: 0.04em;">{person.name}</h4>
-                  <p style="font-size: 0.9rem; color: var(--color-warm-gray); margin: 0; line-height: 1.6;">{person.note}</p>
+                <div class="timeline-item" style="display: flex; gap: 1rem; align-items: flex-start;">
+                  <img src={base + person.img} alt={person.name} width="48" height="48" loading="lazy" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; object-position: top; flex-shrink: 0; box-shadow: 0 0 0 2px var(--color-gold);" />
+                  <div>
+                    <h4 style="font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--color-navy); margin: 0 0 0.25rem; text-transform: uppercase; letter-spacing: 0.04em;">{person.name}</h4>
+                    <p style="font-size: 0.9rem; color: var(--color-warm-gray); margin: 0; line-height: 1.6;">{person.note}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -285,7 +307,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           </h2>
           <p style="font-size: 1rem; line-height: 1.8; color: var(--color-charcoal); margin-bottom: 1.25rem;">
             Bob Hill first walked through the doors of Loprinzi's Gym in <strong>1965</strong>. He was a regular for
-            nearly five decades before becoming the gym's owner in <strong>2014</strong>.
+            nearly five decades before becoming the gym's owner in <strong>1994</strong>.
           </p>
           <p style="font-size: 1rem; line-height: 1.8; color: var(--color-charcoal); margin-bottom: 1.25rem;">
             His stewardship has been defined by one principle: <strong>preservation</strong>. The gym remains deliberately,
@@ -293,8 +315,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             it on — no contracts, no initiation fees, just a place for people who love to train.
           </p>
           <p style="font-size: 1rem; line-height: 1.8; color: var(--color-charcoal);">
-            When you step into Loprinzi's today, you are stepping into a living museum of Portland fitness history.
-            The iron is real. The sweat is real. The legacy is very much alive.
+            Walk in today and it looks about the same as it did in 1970. The equipment is real iron, not chrome.
+            People come here to train, not to be seen. That's how it's been since Sam opened the doors.
           </p>
 
           <div style="background: var(--color-navy); padding: 2.5rem; margin-top: 3rem; text-align: center;">

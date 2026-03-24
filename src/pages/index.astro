@@ -36,26 +36,12 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         </p>
       </div>
       <p style="font-size: clamp(1rem, 2vw, 1.2rem); color: rgba(245,240,235,0.8); max-width: 520px; line-height: 1.65; margin-bottom: 2.5rem;">
-        Portland's original iron paradise. Built by the Loprinzi family. Preserved by those who love it.
-        No contracts. No initiation fees. Just the best workout of your life.
+        The Loprinzi family built this place in 1948. It's barely changed since.
+        No contracts, no initiation fees — just come in and lift.
       </p>
       <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-        <a
-          href={base + "/rates"}
-          style="display: inline-block; background: var(--color-coral); color: #fff; font-family: var(--font-display); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.875rem 2rem; font-size: 0.95rem; text-decoration: none; transition: background 0.2s; cursor: pointer;"
-          onmouseover="this.style.background='var(--color-coral-dark)'"
-          onmouseout="this.style.background='var(--color-coral)'"
-        >
-          View Rates
-        </a>
-        <a
-          href={base + "/history"}
-          style="display: inline-block; border: 2px solid rgba(245,240,235,0.5); color: var(--color-cream); font-family: var(--font-display); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.875rem 2rem; font-size: 0.95rem; text-decoration: none; transition: border-color 0.2s, color 0.2s; cursor: pointer;"
-          onmouseover="this.style.borderColor='var(--color-gold)'; this.style.color='var(--color-gold)'"
-          onmouseout="this.style.borderColor='rgba(245,240,235,0.5)'; this.style.color='var(--color-cream)'"
-        >
-          Our Story
-        </a>
+        <a href={base + "/rates"} class="btn-primary">View Rates</a>
+        <a href={base + "/history"} class="btn-outline">Our Story</a>
       </div>
     </div>
 
@@ -82,15 +68,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           Complete Fitness, Proven Since '48
         </h2>
         <p style="max-width: 540px; margin: 1rem auto 0; color: var(--color-warm-gray); font-size: 1rem; line-height: 1.7;">
-          Every piece of equipment, every class, every square foot of this gym has been curated over
-          decades to give you the most effective workout available.
+          We've been adding to this gym for 75 years. Some of the equipment is older than you are. All of it works.
         </p>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
 
         <!-- Endurance -->
-        <div class="card fade-up" style="padding: 2rem;">
+        <div class="card observe-fade" style="padding: 2rem;">
           <div style="width: 48px; height: 48px; background: var(--color-navy); border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
@@ -111,7 +96,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         </div>
 
         <!-- Strength -->
-        <div class="card fade-up" style="padding: 2rem; border-top: 4px solid var(--color-coral);">
+        <div class="card observe-fade" style="padding: 2rem; border-top: 4px solid var(--color-coral);">
           <div style="width: 48px; height: 48px; background: var(--color-coral); border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M6.5 6.5h11M6.5 17.5h11M3 12h18M6 8.5L3 12l3 3.5M18 8.5l3 3.5-3 3.5"/>
@@ -135,7 +120,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         </div>
 
         <!-- Flexibility -->
-        <div class="card fade-up" style="padding: 2rem;">
+        <div class="card observe-fade" style="padding: 2rem;">
           <div style="width: 48px; height: 48px; background: var(--color-sage); border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"/>
@@ -171,18 +156,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         That's the only contract we've ever needed.
       </p>
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <a
-          href={base + "/rates"}
-          style="display: inline-block; background: var(--color-coral); color: #fff; font-family: var(--font-display); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.875rem 2.5rem; font-size: 1rem; text-decoration: none; transition: background 0.2s;"
-        >
-          See Membership Rates
-        </a>
-        <a
-          href={base + "/contact"}
-          style="display: inline-block; border: 2px solid var(--color-gold); color: var(--color-gold); font-family: var(--font-display); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.875rem 2.5rem; font-size: 1rem; text-decoration: none; transition: background 0.2s, color 0.2s;"
-        >
-          Contact Us
-        </a>
+        <a href={base + "/rates"} class="btn-primary" style="padding: 0.875rem 2.5rem; font-size: 1rem;">See Membership Rates</a>
+        <a href={base + "/contact"} class="btn-outline-gold">Contact Us</a>
       </div>
     </div>
   </section>
@@ -221,8 +196,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       </div>
       <div style="position: relative;">
         <img
-          src={base + "/images/gym-panorama.jpg"}
-          alt="Loprinzi's Gym — the legendary iron paradise of Portland"
+          src={base + "/images/iron-closeup.jpg"}
+          alt="Vintage iron dumbbells at Loprinzi's Gym"
           width="700"
           height="500"
           loading="lazy"
@@ -249,23 +224,26 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         Portland's Elite Have Called This Home
       </h2>
       <p style="color: var(--color-warm-gray); max-width: 560px; margin: 0 auto 3rem; font-size: 0.95rem; line-height: 1.7;">
-        Champions, legends, and athletes — they've all felt the Loprinzi difference.
+        Over the years, some pretty well-known people have sweated on this floor.
       </p>
-      <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; align-items: center;">
+      <div class="visitors-grid" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 2rem; max-width: 900px; margin: 0 auto;">
         {[
-          { name: "Arnold Schwarzenegger", note: "Autographed photo on wall" },
-          { name: "Ken Patera", note: "Olympic weightlifter" },
-          { name: "Bill Walton", note: "NBA legend" },
-          { name: "Jesse Ventura", note: "Wrestler & governor" },
-          { name: "Lloyd Neal", note: "Trail Blazers center" },
+          { name: "Arnold Schwarzenegger", note: "Autographed photo on wall", img: "/images/portrait-arnold.jpg" },
+          { name: "Ken Patera", note: "Olympic weightlifter", img: "/images/portrait-patera.jpg" },
+          { name: "Bill Walton", note: "NBA legend", img: "/images/portrait-walton.jpg" },
+          { name: "Jesse Ventura", note: "Wrestler & governor", img: "/images/portrait-ventura.jpg" },
+          { name: "Lloyd Neal", note: "Trail Blazers center", img: "/images/portrait-neal.jpg" },
         ].map(person => (
-          <div style="text-align: center; min-width: 140px;">
-            <div style="width: 72px; height: 72px; border-radius: 50%; background: var(--color-navy); margin: 0 auto 0.75rem; display: flex; align-items: center; justify-content: center;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                <circle cx="12" cy="7" r="4"/>
-              </svg>
-            </div>
+          <div style="text-align: center;" class="observe-fade">
+            <img
+              src={base + person.img}
+              alt={person.name}
+              class="visitor-portrait"
+              width="96"
+              height="96"
+              loading="lazy"
+              style="margin: 0 auto 0.75rem; display: block;"
+            />
             <p style="font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; letter-spacing: 0.04em; color: var(--color-navy); margin: 0 0 0.25rem;">{person.name}</p>
             <p style="font-size: 0.75rem; color: var(--color-warm-gray); margin: 0;">{person.note}</p>
           </div>
@@ -301,12 +279,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           </a>
         </div>
       </div>
-      <a
-        href={base + "/contact"}
-        style="display: inline-block; background: var(--color-coral); color: #fff; font-family: var(--font-display); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 1rem 2rem; font-size: 0.95rem; text-decoration: none; white-space: nowrap;"
-      >
-        Get Directions
-      </a>
+      <a href={base + "/contact"} class="btn-primary" style="white-space: nowrap;">Get Directions</a>
     </div>
   </section>
 
@@ -316,6 +289,15 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   @media (max-width: 768px) {
     section > div[style*="grid-template-columns: 1fr 1fr"] {
       grid-template-columns: 1fr !important;
+    }
+    .visitors-grid {
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 1.5rem !important;
+    }
+  }
+  @media (max-width: 480px) {
+    .visitors-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
     }
   }
 </style>
